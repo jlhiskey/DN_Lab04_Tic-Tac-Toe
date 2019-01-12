@@ -9,8 +9,6 @@ namespace Lab04_TicTacToe
         {
             //Testing Area
 
-            Board board = new Board();
-            board.DisplayBoard();
 
             Console.ReadLine();
         }

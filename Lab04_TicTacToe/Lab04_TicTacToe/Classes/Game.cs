@@ -32,34 +32,57 @@ namespace Lab04_TicTacToe.Classes
 		{
 
             //TODO: Complete this method and utilize the rest of the class structure to play the game.
+
             // Total Avaliable Turns
+            int totalTurns = 9;
+
             // Keep track of whos turn it is.
+            Player currentPlayer = null;
+
             // Keep track of current turn count
+            int currentTurn;
+
             // Turn Sequence
+            for (currentTurn = 0; currentTurn < totalTurns; currentTurn++)
+            {
                 //Show Board
-                //Set who the current player is
+                Board.DisplayBoard();
+
+                //Set Current Player
+                currentPlayer = NextPlayer();
+
                 //Current Player Takes Turn
+                currentPlayer.TakeTurn(Board);
+
                 //Check if Turn Caused Player to Win
-                    //If Yes End Game
-                    //If No Switch to Other Player
+                //If Yes End Game
+                if (CheckForWinner(Board) == true) {
+                    break;
+                }
+                //If No Switch to Other Player
+                else
+                {
+                    SwitchPlayer();
+                }
 
+                
+                
+            }
             // Show the final board
+            Board.DisplayBoard();
 
-            /*
-             * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
-             * 
-             * A few things to get you started:
-            1. A turn consists of a player picking a position on the board with their designated marker. 
-            2. Display the board after every turn to show the most up to date state of the game
-            3. Once a Winner is determined, display the board one final time and return a winner
+            //Return with who the current player is if the game hasn't ended. Else return nothing.
+            if (currentTurn == totalTurns)
+            {
+                return null;
+            }
+            else
+            {
+                return currentPlayer;
+            }
 
-            Few additional hints:
-                Be sure to keep track of the number of turns that have been taken to determine if a draw is required
-                and make sure that the game continues while there are unmarked spots on the board. 
-
-            Use any and all pre-existing methods in this program to help construct the method logic. 
-             */
-		}
+            
+        }
 
 
 		/// <summary>
