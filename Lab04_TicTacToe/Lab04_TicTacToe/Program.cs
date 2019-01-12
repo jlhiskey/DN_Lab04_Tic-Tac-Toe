@@ -50,6 +50,46 @@ namespace Lab04_TicTacToe
             Player winnerOfGame = game.Play();
 
             // Display Winner
+            Console.WriteLine();
+            if (winnerOfGame != null)
+            {
+                Console.WriteLine($"Great Job {winnerOfGame.Name}!!");
+            }
+            else
+            {
+                Console.WriteLine("DRAW!!!");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"Would you like to play again?");
+            int confirm = 0;
+            Console.WriteLine("Press 1 for YES");
+            Console.WriteLine("Press 2 for NO");
+            try
+            {
+                confirm = int.Parse(Console.ReadLine());
+                if (confirm > 2 || confirm < 1)
+                {
+                    Console.WriteLine($"Please enter Integer.");
+                    Console.WriteLine("Press 1 for YES");
+                    Console.WriteLine("Press 2 for NO");
+                    confirm = int.Parse(Console.ReadLine());
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter Integer.");
+                Console.WriteLine("Press 1 for YES");
+                Console.WriteLine("Press 2 for NO");
+                confirm = int.Parse(Console.ReadLine());
+            }
+            if (confirm == 1)
+            {
+                StartGame();
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
         }
     }
 }
