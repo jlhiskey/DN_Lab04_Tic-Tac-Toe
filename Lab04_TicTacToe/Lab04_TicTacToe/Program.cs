@@ -12,5 +12,16 @@ namespace Lab04_TicTacToe
 
             Console.ReadLine();
         }
+        //Add All Logic To Play Game
+        //Determine Players (Player)
+            //P1
+            //P2
+        // Start new Game (Game)
+        // Play Game(Game)
+        // Display Winner
+
+
+
+            
     }
 }
