@@ -28,8 +28,8 @@ namespace Lab04_TicTacToe.Classes
 		/// Activate the Play of the game
 		/// </summary>
 		/// <returns>Winner</returns>
-		public Player Play()
-		{
+		//public Player Play()
+		//{
 
 			//TODO: Complete this method and utilize the rest of the class structure to play the game.
 
@@ -47,7 +47,7 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
-		}
+		//}
 
 
 		/// <summary>

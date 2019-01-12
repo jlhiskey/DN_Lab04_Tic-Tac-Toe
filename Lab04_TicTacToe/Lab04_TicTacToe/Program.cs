@@ -1,4 +1,5 @@
 ﻿using System;
+using Lab04_TicTacToe.Classes;
 
 namespace Lab04_TicTacToe
 {
@@ -6,7 +7,12 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Testing Area
+
+            Board board = new Board();
+            board.DisplayBoard();
+
+            Console.ReadLine();
         }
     }
 }
