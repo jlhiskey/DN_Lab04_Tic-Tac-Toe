@@ -31,7 +31,7 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 
-            //TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //Done: Complete this method and utilize the rest of the class structure to play the game.
 
             // Total Avaliable Turns
             int totalTurns = 9;

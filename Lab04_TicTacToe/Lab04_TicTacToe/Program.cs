@@ -8,20 +8,46 @@ namespace Lab04_TicTacToe
         static void Main(string[] args)
         {
             //Testing Area
-
+            StartGame();
 
             Console.ReadLine();
         }
-        //Add All Logic To Play Game
-        //Determine Players (Player)
+
+        /// <summary>
+        /// Starts Game
+        /// </summary>
+        static void StartGame()
+        {
+            Console.WriteLine("Welcome to Jason's Tic-Tac-Toe");
+
+            //Determine Players (Player)
+            Player playerOne = new Player();
+            Player playerTwo = new Player();
+
             //P1
+            Console.WriteLine("What is Player One's Name?");
+            playerOne.Name = Console.ReadLine();
+            if(playerOne.Name.Length == 0)
+            {
+                playerOne.Name = "Player One";
+            }
+            playerOne.Marker = "X";
+            playerOne.IsTurn = true;
+
             //P2
-        // Start new Game (Game)
-        // Play Game(Game)
-        // Display Winner
+            Console.WriteLine("What is Player Two's Name?");
+            playerTwo.Name = Console.ReadLine();
+            if (playerTwo.Name.Length == 0)
+            {
+                playerTwo.Name = "Player Two";
+            }
+            playerTwo.Marker = "O";
+            playerTwo.IsTurn = true;
 
+            // Start new Game (Game)
 
-
-            
+            // Play Game(Game)
+            // Display Winner
+        }
     }
 }
