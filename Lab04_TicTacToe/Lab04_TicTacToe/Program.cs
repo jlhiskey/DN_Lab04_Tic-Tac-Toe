@@ -45,8 +45,10 @@ namespace Lab04_TicTacToe
             playerTwo.IsTurn = true;
 
             // Start new Game (Game)
+            Game game = new Game(playerOne, playerTwo);
 
-            // Play Game(Game)
+            Player winnerOfGame = game.Play();
+
             // Display Winner
         }
     }
