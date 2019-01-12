@@ -28,10 +28,22 @@ namespace Lab04_TicTacToe.Classes
 		/// Activate the Play of the game
 		/// </summary>
 		/// <returns>Winner</returns>
-		//public Player Play()
-		//{
+		public Player Play()
+		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //TODO: Complete this method and utilize the rest of the class structure to play the game.
+            // Total Avaliable Turns
+            // Keep track of whos turn it is.
+            // Keep track of current turn count
+            // Turn Sequence
+                //Show Board
+                //Set who the current player is
+                //Current Player Takes Turn
+                //Check if Turn Caused Player to Win
+                    //If Yes End Game
+                    //If No Switch to Other Player
+
+            // Show the final board
 
             /*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
@@ -47,7 +59,7 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
-		//}
+		}
 
 
 		/// <summary>
