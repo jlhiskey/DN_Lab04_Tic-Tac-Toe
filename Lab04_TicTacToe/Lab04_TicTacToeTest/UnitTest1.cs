@@ -78,13 +78,49 @@ namespace Lab04_TicTacToeTest
         [Fact]
         public void GivenABoardTestForNoWin()
         {
+            //Sets the Game Board Selected Positions
+            Position positionOne = new Position(0, 0);
+            Position positionTwo = new Position(1, 2);
+            Position positionThree = new Position(2, 2);
 
+            // Sets the Players of the Game
+            Player player1 = new Player();
+            Player player2 = new Player();
+
+            //Initiates a new game
+            Game testGame = new Game(player1, player2);
+
+            //Marks Game Board Selected Positions
+            testGame.Board.GameBoard[positionOne.Row, positionOne.Column] = "X";
+            testGame.Board.GameBoard[positionTwo.Row, positionTwo.Column] = "X";
+            testGame.Board.GameBoard[positionThree.Row, positionThree.Column] = "X";
+
+            Assert.False(testGame.CheckForWinner(testGame.Board));
         }
 
         [Fact]
         public void PlayersSwitchBetweenTurnsTest()
         {
+            // Sets the Players of the Game
+            Player player1 = new Player();
+            player1.Name = "Ricky Bobby";
 
+            Player player2 = new Player();
+            player2.Name = "Jim Bob";
+
+            //Initiates a new game
+            Game testGame = new Game(player1, player2);
+
+            //Sets player of first turn.
+            Player playerTurnOne = testGame.NextPlayer();
+
+            //Switches Player
+            testGame.SwitchPlayer();
+
+            //Sets player of second turn.
+            Player playerTurnTwo = testGame.NextPlayer();
+
+            Assert.NotEqual(playerTurnOne, playerTurnTwo);
         }
 
         [Fact]
