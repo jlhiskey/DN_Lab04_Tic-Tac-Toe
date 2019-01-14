@@ -1,85 +1,56 @@
 
-# Lab 03: Word Guess Game
- - Josie Cat has requested that a “Word Guess Game” be built. The main idea of the game is she must guess what a mystery word is by inputting (1) letter at a time. The game should save all of her guesses (both correct and incorrect) throughout each session of the game, along with the ability to show her how many letters out of the word she has guessed correctly.
-
- - Each time a new game session starts, the mystery word chosen should come from an external text file that randomly selects one of the words listed. This bank of words should be editable by Josie so that she may view, add, and delete words as she wishes. She expects the game to have a simple user interface that is easy to navigate.
-
- - Using everything you’ve learned up to this point, create a word guess game that will meet all of the requirements described in the user story above.
+# Lab 04: Tic-Tac-Toe
+ - Building off of your starter code provided from the class repo, complete the Tic Tac Toe logic.
+   - Find the TODOs in the code (Hint: Go to your “view” menu and select “Task List”, This will show you all of your TODOs within the starter code) and add additional logic to accomplish each task.
+   - Add summary comments above all of the methods that do not currently have summary comments. Be sure to explain what the main purpose of the method is, in addition to where it is being called/used. Identify the parameters and returns in the appropriate xml tags.
+   - You’ve received reports from other users that there is a bug in the system! When a user selects a position on the board that is already marked, it is not prompting the user to retake their turn. It is up to You to find and fix this bug!
  
 ## Specs
-- The program (should) contain the following
-    - Methods for each action (suggestions: Home navigation, View words in the external file, add a word to the external file, Remove words from a text file, exit the game, start a new game)
-    - When playing a game, randomly select one of the words to output to the console for the user to guess (Use the Random class)
-    - You should have a record of the letters they have attempted so far
-    - If they guess a correct letter, display that letter in the console for them to refer back to when making guesses (i.e. C _ T S )
-    - Your program does not need to be case sensitive.
-    - Errors should be handled through Exception handling
-    - Do not create external classes to accomplish this task. All code should live in the Program.cs file
-    - Stay within scope, you may use the methods/classes listed below if desired.
-    - Once the game is completed, the user should be presented with the option to “Play again” (a new random word is generated), or “Exit” (the program terminates)
-    - The user should only be allowed to guess only 1 letter at a time. Do not make it so that they can input the whole alphabet and get the answer.
-- When running your application, it should activate the user interface without any direct code manipulation
+
+### Guidance
+- A Game board, to a user, looks like this:
+
+    ##### 1 2 3
+    ##### 4 5 6
+    ##### 7 8 9
+
+- The numbers in each of the squares will indicate the position number. Prompt the user to select which position they wish to play and then replace that position with either an X or an O.
+
+- A winning board may look like this (O Wins!):
+
+    ##### X X O
+    ##### 4 O X
+    ##### O X 9
+- Remember that Tic-Tac-Toe is a 2 player game, so be sure to “switch” between players. Make it known to the user that their turn is over and it’s time for the next players turn. You will both play on the same board.
+
+- Here is an outline for different classes that you have:
+
+    - Game Board (this should construct/display the board after every turn with it’s new state)
+    - Player (This will hold the players information such as name or marker, in addition to any actions that user may take)
+    - Game (This would hold the actions of the game. )
+- Be sure to check for a winner after each turn. Be aware that it is possible to have a tie/draw if no winner can be determined and all marks on the board are occupied.
+
+- Stay within scope of this project. Please only use concepts and resources that we have covered so far in previous labs/lectures/assigned prework. If you are unsure if it is within scope, please ask a TA or instructor.
 
 ## Unit Tests
 - Test that your app has the following functionality:
-    - Test that a file can be updated
-    - Test that a word can be added to a file
-    - Test that you can retrieve all words from the file
-    - Test that the word chosen can accurately detect if the letter exists in the word (test that a letter does exist and does not exist)
+    - Given a game board, Test for winners
+    - Test that there is a switch in players between turns
+    - Confirm that the position the player inputs correlates to the correct index of the array
+    - One other “unique” test of your own
 ## Example Usage
 - When you run app.
-    - Welcome to Word Guess Game:
-    - Main Menu
-      - Select 0 to Exit Application
-        - Exits Application
-      - Select 1 To Access Word List Menu
-        - Access Word 1List
-          - Select 0 to Exit To Main Menu
-            - Returns to Main Menu
-          - Select 1 To Show Existing Words
-            - Displays a list of saved words.
-            - Returns to Access Word List Menu
-          - Select 2 To Add New Word
-            - Asks for user input (STRING A-Z) of new word.
-            - Displays a list of saved words.
-            - Returns to Access Word List Menu
-          - Select 3 To Remove Word
-            - Displays a list of saved words.
-            - Asks for user input (INTEGER) of which word they want to delete.
-              - Displays selected word and asks if you are sure you want to delete.
-                - Select 1 for Yes
-                  -  Displays a list of saved words.
-                  - Returns to Access Word List Menu
-                - Select 2 for No
-                  -  - Returns to Access Word List Menu
-      - Select 2 to Start New Game
-        - New Game
-          - Displays _ _ _ equal to how many letters there are in random word chosen from Word List.
-          - Displays already guessed letters arranged alphabetically.
-          - Asks for user input (SINGLE CHARACTER) to guess a letter.
-            - If Correct
-              - Displays (selected letter) was correct!
-              - Displays _ _ _ equal to how many letters there are in random word chosen from Word List.
-              - Displays already guessed letters arranged alphabetically.
-              - Asks for user input (SINGLE CHARACTER) to guess a letter.
-            - If Incorrect
-              - Displays (selected letter) was incorrect.
-              - Displays _ _ _ equal to how many letters there are in random word chosen from Word List.
-              - Displays already guessed letters arranged alphabetically.
-              - Asks for user input (SINGLE CHARACTER) to guess a letter. 
-          - Winning the Game
-            - Once all correct characters have been guessed you win!
-              - Displays (correct word) is the word!
-              - Displays You Won! It took you (number of guesses) guesses to figure it out.
-              - Displays Would You Like To Play Again?
-                - Select 1 for Yes
-                  -  Start New Game with new random word.
-                - Select 2 for No
-                  -  Returns to Main Menu
+    - Welcome to Jason's Tic-Tac-Toe
+      - Asks for Player One Name (STRING INPUT)
+      - Asks for Player Two Name (STRING INPUT)
+      - Starts Game
+        - Displays Game Board
+        - Asks Player One To Make Move
+        - Displays Game Board
+        - Asks Player Two To Make Move
+      - End of Game
+        - Displays Board and Either Winner or Draw
 
     ## Screenshots of Usage
-    ### Gameplay
-    ![solution image](Solution1.PNG)
-
-    ### Word List
-    ![solution image](Solution2.PNG)
+    
+    ![solution image](Solution.PNG)

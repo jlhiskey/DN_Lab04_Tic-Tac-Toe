@@ -129,11 +129,34 @@ namespace Lab04_TicTacToeTest
             //Sets input variable that would have come from user.
             int boardPosition = 9;
 
-            //Parses 
+            //Parses input into the players turn instance
             Position positionCoordinates = Player.PositionForNumber(boardPosition);
-            Assert.True(positionCoordinates.Row == 3 && positionCoordinates.Column == 3);
+
+            Assert.True(positionCoordinates.Row == 2 && positionCoordinates.Column == 2);
         }
 
-      
+        [Fact]
+        public void InputPostionEqualsCorrectBoardPositionTwo()
+        {
+            //Sets input variable that would have come from user.
+            int boardPosition = 5;
+
+            //Parses input into the players turn instance
+            Position positionCoordinates = Player.PositionForNumber(boardPosition);
+
+            Assert.True(positionCoordinates.Row == 1 && positionCoordinates.Column == 1);
+        }
+
+        [Fact]
+        public void InputPostionEqualsOutOfBoundsBoardPosition()
+        {
+            //Sets input variable that would have come from user.
+            int boardPosition = 25;
+
+            //Parses input into the players turn instance
+            Position positionCoordinates = Player.PositionForNumber(boardPosition);
+
+            Assert.Null(positionCoordinates);
+        }
     }
 }
