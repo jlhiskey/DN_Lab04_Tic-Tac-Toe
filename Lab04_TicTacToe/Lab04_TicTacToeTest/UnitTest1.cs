@@ -126,7 +126,12 @@ namespace Lab04_TicTacToeTest
         [Fact]
         public void InputPostionEqualsCorrectBoardPosition()
         {
+            //Sets input variable that would have come from user.
+            int boardPosition = 9;
 
+            //Parses 
+            Position positionCoordinates = Player.PositionForNumber(boardPosition);
+            Assert.True(positionCoordinates.Row == 3 && positionCoordinates.Column == 3);
         }
 
       

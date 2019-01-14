@@ -11,9 +11,9 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public string[,] GameBoard = new string[,]
 		{
-			{"|1|", "|2|", "|3|"},
-			{"|4|", "|5|", "|6|"},
-			{"|7|", "|8|", "|9|"},
+			{"1", "2", "3"},
+			{"4", "5", "6"},
+			{"7", "8", "9"},
 		};
 
         /// <summary>
